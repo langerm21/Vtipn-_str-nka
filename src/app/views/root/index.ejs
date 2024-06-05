@@ -14,10 +14,19 @@
 			<a href="/byid">Id</a>
 		</nav>
 		
-		<div>
+		<div align="center">
 			<% console.log("setup", joke.setup) %>
-			<p><%= joke.setup %></p>
-			<p><%= joke.punchline %></p>
+			<table>
+				<tr>
+					<th>Setupline: </th>
+					
+					<td><%= joke.setup %></td>
+				</tr>
+				<tr>
+					<th>Punchline: </th>
+					<td><%= joke.punchline %></td>
+				</tr>
+			</table>
 		</div>
 		
 		<script src="../js/main.js"></script>
