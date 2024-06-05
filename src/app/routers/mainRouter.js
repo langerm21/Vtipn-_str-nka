@@ -2,6 +2,8 @@ const mainRouter = require('express').Router();
 
 const mainController = require('../controllers/mainController');
 
+mainRouter.get('/bytype', mainController.bytype);
+mainRouter.get('/byid', mainController.byid);
 mainRouter.get(['/', '/index'], mainController.index);
 
 mainRouter.get('*', (req, res) => {
