@@ -1,2 +1,2 @@
-# Vtipn-_str-nka
+# Vtipna_stranka
 bude to funnyyy
