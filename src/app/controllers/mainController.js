@@ -9,6 +9,6 @@ exports.byid = (req, res) => {
 	res.render('root/index');
 }
 
-exports.index = (req, res) => {
-	res.render('root/index', {joke: modelJokes.getRandom()});
+exports.index = async (req, res) => {
+	res.render('root/index', {joke: await modelJokes.getRandom()});
 }

@@ -1,19 +1,13 @@
-exports.getRandom = () => {
+exports.getRandom = async () => {
 	const apiURL = 'https://official-joke-api.appspot.com/jokes/random';
 	
-	fetch(apiURL)
-	.then(response => {
-		if (!response.ok){
-			throw new Error('What...?');
-		}
-		return response.json();
-	})
-	.then(data => {
-		return data;
-	})
-	.catch(err => {
-		console.error('Error: ', err);
-	});
+	let response = await fetch(apiURL);
+	let data = await response.json();
 	
-	return false;
+	if(data) {
+		console.log("Vtip:", data);
+		return data;
+	} else {
+		return false;
+	}
 }
