@@ -1,4 +1,7 @@
+const modelJokes = require('../models/jokesModel.js'); 
+
 exports.bytype = (req, res) => {
+	
 	res.render('root/index');
 }
 
@@ -7,5 +10,5 @@ exports.byid = (req, res) => {
 }
 
 exports.index = (req, res) => {
-	res.render('root/index');
+	res.render('root/index', {joke: modelJokes.getRandom()});
 }
