@@ -3,6 +3,9 @@ exports.getRandom = () => {
 	
 	fetch(apiURL)
 	.then(response => {
+		if (!response.ok){
+			throw new Error('What...?');
+		}
 		return response.json();
 	})
 	.then(data => {
