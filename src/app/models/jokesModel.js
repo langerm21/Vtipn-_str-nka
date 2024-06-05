@@ -9,12 +9,11 @@ exports.getRandom = () => {
 		return response.json();
 	})
 	.then(data => {
-		console.log(data);
+		return data;
 	})
 	.catch(err => {
 		console.error('Error: ', err);
 	});
 	
-	
-	return data;
+	return false;
 }
