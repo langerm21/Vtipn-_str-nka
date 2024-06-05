@@ -6,7 +6,7 @@ exports.bytype = (req, res) => {
 }
 
 exports.byid = async (req, res) => {
-	res.render('root/index', {joke: await modelJokes.getByType('general')});
+	res.render('root/index', {joke: await modelJokes.getByType()});
 }
 
 exports.index = async (req, res) => {
