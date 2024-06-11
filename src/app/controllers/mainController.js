@@ -1,13 +1,21 @@
 const modelJokes = require('../models/jokesModel.js'); 
 const modelMemes = require('../models/memesModel.js');
 
-exports.bytype = (req, res) => {
-	
-	res.render('root/index');
+exports.bytype = async (req, res) => {
+	res.render('root/jokes/byType', {joke: await modelJokes.getRandom(), type: 'general'});
+}
+
+exports.bytypePost = async (req, res) => {
+	res.render('root/jokes/byType', {joke: await modelJokes.getByType(req.body.type), type: req.body.type});
 }
 
 exports.byid = async (req, res) => {
-	res.render('root/index', {joke: await modelJokes.getByType()});
+	res.render('root/jokes/byId', {joke: await modelJokes.getRandom(), id: 0});
+}
+
+exports.byidPost = async (req, res) => {
+	console.log(req.body.id);
+	res.render('root/jokes/byId', {joke: await modelJokes.getById(req.body.id), id: req.body.id});
 }
 
 exports.index = async (req, res) => {
