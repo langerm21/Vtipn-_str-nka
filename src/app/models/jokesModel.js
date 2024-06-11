@@ -8,7 +8,7 @@ exports.getRandom = async () => {
 		console.log("Vtip:", data);
 		return data;
 	} else {
-		return { type: 'generel',
+		return { type: 'general',
 				setup: "You know what isn't a joke?",
 				punchline: 'This joke. Error while getting random joke.',
 				id: -1};
@@ -17,7 +17,9 @@ exports.getRandom = async () => {
 
 exports.getByType = async (type) => {
 	const apiURL = 'https://official-joke-api.appspot.com/jokes/';
-	apiURL += type + "/random";
+	apiURL += 'general' + '/random';
+	
+	console.log(apiURL);
 	
 	let response = await fetch(apiURL);
 	let data = await response.json();
