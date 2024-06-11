@@ -4,6 +4,8 @@ const mainController = require('../controllers/mainController');
 
 mainRouter.get('/bytype', mainController.bytype);
 mainRouter.get('/byid', mainController.byid);
+mainRouter.get('/meme', mainController.meme);
+mainRouter.get('/memeByType', mainController.memeByType);
 mainRouter.get(['/', '/index'], mainController.index);
 
 mainRouter.get('*', (req, res) => {
