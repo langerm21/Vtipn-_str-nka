@@ -25,6 +25,12 @@ exports.index = async (req, res) => {
 exports.meme = async (req, res) => {
 	res.render('root/memes/index', {meme: await modelMemes.getRandom()});
 }
+
 exports.memeByType = async (req, res) => {
-	res.render('root/index', {meme: await modelMemes.getByType()});
+	res.render('root/memes/memeByType', {meme: await modelMemes.getRandom(), subreddit: 'idk'});
+}
+
+exports.memeByTypePost = async (req, res) => {
+	console.log(req.body.type);
+	res.render('root/memes/memeByType', {meme: await modelMemes.getByType(req.body.type), subreddit: req.body.type});
 }
